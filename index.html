@@ -114,22 +114,58 @@
             opacity: 0;
         }
     </style>
+    <script>
+        function showText(number) {
+  if (number === 1) {
+    document.querySelector("#desc1").classList.remove("hideText");
+    document.querySelector("#desc1").classList.add("showText");
+  } else if (number === 2) {
+    document.querySelector("#desc2").classList.remove("hideText");
+    document.querySelector("#desc2").classList.add("showText");
+  } else {
+    document.querySelector("#desc3").classList.remove("hideText");
+    document.querySelector("#desc3").classList.add("showText");
+  }
+}
+function hideText(number) {
+  if (number === 1) {
+    document.querySelector("#desc1").classList.remove("showText");
+    document.querySelector("#desc1").classList.add("hideText");
+  } else if (number === 2) {
+    document.querySelector("#desc2").classList.remove("showText");
+    document.querySelector("#desc2").classList.add("hideText");
+  } else {
+    document.querySelector("#desc3").classList.remove("showText");
+    document.querySelector("#desc3").classList.add("hideText");
+  }
+}
+function alertText(number) {
+	alert(`${number}번째 추억이에요! 눌러주셔서 감사합니다 :)`);
+}
+    </script>
 </head>
 
 <body>
     <div class="container">
         <div class="photos">
-            <div id="image1" class="photo-frame">
+            <div id="image1" class="photo-frame" onmouseover="showText(1)"
+            onmouseout="hideText(1)"
+            onclick="alertText(1)">
                 <span id="desc1" class="photo-description">
                     시원한
                 </span>
             </div>
-            <div id="image2" class="photo-frame">
+            <div id="image2" class="photo-frame" onmouseover="showText(2)"
+            onmouseout="hideText(2)"
+            onclick="alertText(2)">
                 <span id="desc2" class="photo-description">
                     영롱한
                 </span>
             </div>
-            <div id="image3" class="photo-frame">
+            <div id="image3" class="photo-frame"
+            onmouseover="showText(3)"
+	onmouseout="hideText(3)"
+	onclick="alertText(3)">
                 <span id="desc3" class="photo-description">
                     따뜻한
                 </span>
